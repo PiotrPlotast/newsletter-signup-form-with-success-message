@@ -1,9 +1,12 @@
 const button = document.querySelector('.submit-btn');
 const signUpFormDiv = document.querySelector('.sign-up-form');
 const successMessageDiv = document.querySelector('.success-message');
+const form = document.querySelector('form');
 
-button.addEventListener('click', () => {
+function submitForm() {
     signUpFormDiv.style.display = 'none';
     successMessageDiv.style.display = 'block';
-    event.preventDefault();
-})
+};
+
+
+form.addEventListener('submit', submitForm);
