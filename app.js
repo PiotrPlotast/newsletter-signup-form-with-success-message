@@ -1,12 +1,13 @@
-const button = document.querySelector('.submit-btn');
-const signUpFormDiv = document.querySelector('.sign-up-form');
-const successMessageDiv = document.querySelector('.success-message');
+const signUpFormDiv = document.querySelector('.card__sign-up-form');
+const successMessageDiv = document.querySelector('.card__success-message');
 const form = document.querySelector('form');
+const userEmail = document.querySelector('#email');
+const userEmailSpan = document.querySelector('.user-email')
 
-function submitForm() {
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
     signUpFormDiv.style.display = 'none';
     successMessageDiv.style.display = 'block';
-};
-
-
-form.addEventListener('submit', submitForm);
+    userEmailSpan.innerHTML = userEmail.value;
+});
